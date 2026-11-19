@@ -1,28 +1,34 @@
-# Hi, I'm Dennis! 👋
+# Dennis — Personal Website
 
-I'm an aspiring **IT Specialist in System Integration** from Germany, currently expanding my knowledge and skills in IT and software development.
+A single-page personal website featuring interactive neural-network artwork, an in-browser digit recognition experiment, A* / Dijkstra pathfinding, and a link to GitHub.
 
-I'm passionate about technology, programming, and understanding how things work behind the scenes. I enjoy solving problems, exploring new technologies, and continuously improving my skills.
+## Run locally
 
-### 🚀 About Me
-- 🎓 Currently training as an IT Specialist in System Integration
-- 💻 Learning **Python, PHP, SQL, HTML & CSS**
-- 🧠 Interested in algorithms, problem-solving, and software development
-- 🛠️ Exploring Git, GitHub, and collaborative development
-- 📈 Always learning, experimenting, and improving
+The JavaScript uses ordinary browser scripts, so the grid can also initialize when the HTML file is opened directly. A local HTTP server is still recommended for development.
 
-### 🛠️ Tech Stack
-**Languages:** Python · PHP · SQL · HTML · CSS
+```bash
+python -m http.server 8000
+```
 
-**Tools:** Git · GitHub · VS Code
+Then visit http://localhost:8000 . VS Code Live Server also works.
 
-### 🎯 Current Goals
-- Strengthen my programming fundamentals
-- Build practical projects and gain hands-on experience
-- Improve my problem-solving skills
-- Explore open-source development
+## GitHub link
 
-### 💡 My Philosophy
-> Learn. Build. Break things. Fix them. Repeat.
+The contact section links to https://github.com/DeGoX1. No form service or backend is needed.
 
-Thanks for stopping by! 🚀
+## Digit-recognition experiment
+
+The digit recognizer uses a lightweight **k-nearest neighbours (k-NN)** machine-learning classifier with locally generated digit samples. It requires no model download or TensorFlow.js, works offline, and is ready almost immediately. It is **not** a neural network or an MNIST-trained handwriting recognizer. Handwritten accuracy can be limited; the prediction scores are similarity votes, not calibrated probabilities.
+
+The animated neural network in the hero remains a visual interactive effect.
+
+Tailwind's browser CDN still requires an internet connection to display its utility styling. The Tailwind browser version is meant for development, not production.
+
+## Files
+
+- `index.html`: page markup and Tailwind browser integration
+- `style.css`: custom theme and layout
+- `assets/js/network.js`: animated neural network backdrop
+- `assets/js/recognition.js`: offline k-NN classification and drawing canvas
+- `assets/js/pathfinding.js`: interactive A* and Dijkstra grid
+- `assets/js/main.js`: initialization
